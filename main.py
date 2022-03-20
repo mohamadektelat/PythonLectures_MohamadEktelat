@@ -9,11 +9,8 @@ import os
 def get_files():
     # getting the folder path from the user.
     path = input("please enter the file path: ")
-    arr = []
     # check the files in the folder.
-    for file in os.listdir(path):
-        if file.startswith("deep"):
-            arr.append(file)
+    arr = [file for file in os.listdir(path) if file.startswith("deep")]
     return arr
 
 
