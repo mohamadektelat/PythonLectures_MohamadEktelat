@@ -4,12 +4,18 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
+# This function is responsible for calculating a product price according to his ingredient.
+def calculating_one_price(ingredient, price):
+    return (ingredient/100)*price
+
+
+# This function is responsible for calculating the price of the recipe.
+# The function gets an input a dictionary of the product prices, and the optional products and the ingredients
+# of the products
 def get_recipe_price(prices, optionals=[], **ingredients):
-    price = 0
-    for ingredient in ingredients:
-        if ingredient not in optionals:
-            price += ((ingredients[ingredient] / 100) * prices[ingredient])
-    return price
+    price = (calculating_one_price(ingredients[ingredient], prices[ingredient]) for ingredient in ingredients
+             if ingredient not in optionals)
+    return sum(price)
 
 
 # Press the green button in the gutter to run the script.
