@@ -7,6 +7,8 @@ from random import randrange
 from datetime import datetime
 
 
+
+# This function is responsible for calculating a date in range start to end.
 def random_date(start, end):
     delta = end - start
     int_delta = delta.days
@@ -14,10 +16,11 @@ def random_date(start, end):
     return (start + timedelta(days=random_day)).date()
 
 
-def get_date_day(d):
-    if 2 == d.weekday():
+# This function is responsible for checking is the date day is monday.
+def get_date_day(date):
+    if 2 == date.weekday():
         return "אין לי ויניגרט"
-    return d
+    return date
 
 
 # Press the green button in the gutter to run the script.
