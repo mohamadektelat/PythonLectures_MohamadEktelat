@@ -4,6 +4,8 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
+# This function responsible for joining a number of lists into one list with the specific separator.
+# This function gets an unknown number of lists and a separator(if not the default sep is -).
 def join(*args, sep='-'):
     if len(args) == 0:
         return []
