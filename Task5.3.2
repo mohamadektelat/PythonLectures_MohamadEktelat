@@ -1,0 +1,24 @@
+def check_perfect(n):
+    """Takes number and checks if the number is perfect.
+        Returns boolean.
+    """
+    divisors_sum = sum([divisor for divisor in range(1, n) if n % divisor == 0])
+    return divisors_sum == n
+
+
+def generate_numbers():
+    """Infinitely generator to get the numbers.
+    """
+    num = 1
+    while True:
+        yield num
+        num += 1
+
+
+if __name__ == '__main__':
+    """The main function of the program
+    """
+    divisor_generator = generate_numbers()
+    for number in divisor_generator:
+        if check_perfect(number):
+            print(number)
